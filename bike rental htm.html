@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental Service</title>
+    <link rel="stylesheet" href="joshi.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Bike Rental Service</h1>
+    </header>
+    
+    <section>
+        <h2>Available Bikes</h2>
+        <div class="vehicle-container" id="bikes">
+            <div class="vehicle" data-name="Yamaha">
+                <img src="bike1.jpg" alt="Yamaha">
+                <h3>Yamaha</h3>
+                <p>Price: $30/day</p>
+                <button onclick="bookVehicle('Yamaha', 30)">Book Now</button>
+            </div>
+            <div class="vehicle" data-name="Ducati">
+                <img src="bike2.jpg" alt="Ducati">
+                <h3>Ducati</h3>
+                <p>Price: $90/day</p>
+                <button onclick="bookVehicle('Ducati', 90)">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-form" class="hidden">
+        <h2>Book Your Bike</h2>
+        <p id="selected-vehicle"></p>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" required>
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" required oninput="calculateCost()">
+        <p>Total Cost: $<span id="total-cost">0</span></p>
+        
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method">
+            <option value="online">Online Payment</option>
+            <option value="cash">Cash on Pickup</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="wallet">Digital Wallet</option>
+        </select>
+        
+        <button onclick="confirmBooking()">Confirm Booking</button>
+    </section>
+    
+    <p id="thank-you-message">Thank you for your booking!</p>
+
+    <script src="joshi.js">
+       
+        
+    </script>
+</body>
+</html>
